@@ -13,12 +13,6 @@
 #include <string>
 
 
-/*DWORD CallFunction = 0x0078F5F0;
-DWORD player = 0x05342D90;
-DWORD chuj = 0x1E4E59C4;*/
-
-DWORD CallFunction = 0x0081E750;
-DWORD chuj = 0x00EECBF4;
 
 DWORD AttackFuncCall = 0x00791D40;
 DWORD MobID = 0x065F3A9E;
@@ -27,7 +21,7 @@ DWORD ucAdress = 0x1F718964;
 
 DWORD spawnHookJump = 0x009E0E38;
 
-void select(void* monsterID, void* unknowMemory)
+void Atack(void* monsterID, void* unknowMemory)
 {
 	void* ad1 = monsterID; void* ad2 = unknowMemory;
 
@@ -240,7 +234,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 						void* SomeDataPointer = nullptr;
 						memcpy(&SomeDataPointer, (void*)FinalAddress, sizeof(void*));
 						selectedIndex = i;
-						select(MonsterListCpy[selectedIndex].MonsterID, SomeDataPointer);
+						Atack(MonsterListCpy[selectedIndex].MonsterID, SomeDataPointer);
 
 						
 						//select(MonsterListCpy[0].MonsterID, SomeDataPointer);
